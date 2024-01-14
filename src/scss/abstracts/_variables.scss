@@ -1,0 +1,36 @@
+@use "functions" as *;
+
+// colors
+$clr-bg-main: #fefcf7;
+
+$clr-primary-500: #0e8784;
+$clr-primary-300: lighten(#0e8784, 10);
+
+$clr-secondary-500: #fdd6ba;
+$clr-secondary-300: #f4f1eb;
+
+$clr-grey-950: #2c343e;
+$clr-grey-900: #333d4b;
+$clr-grey-300: #83888f;
+$clr-grey-500: mix($clr-grey-900, $clr-grey-300);
+$clr-white: #fff;
+
+// breakpoints
+
+$bp-tablet: 740px;
+$bp-desktop: 980px;
+
+// sizing
+
+$padding-inline-min: 1.5rem;
+$padding-inline-max: 2.5rem;
+$padding-inline-content: get-clamp(
+  $padding-inline-min,
+  $padding-inline-max,
+  20rem,
+  $bp-tablet
+);
+
+$padding-inner-desktop: 5.3rem;
+
+$max-width-content: 1280px;

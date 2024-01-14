@@ -1,0 +1,59 @@
+@use "sass:math";
+@use "sass:list";
+@use "sass:map";
+@use "functions" as *;
+@use "variables" as *;
+
+@mixin animation {
+  $name: animation-#{unique-id()};
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  animation-name: $name;
+}
+
+@mixin pseudo(
+  $where: after,
+  $content: "",
+  $position: absolute,
+  $inset: 0,
+  $parent: false
+) {
+  @if ($parent == true) {
+    position: relative;
+  }
+
+  &::#{$where} {
+    content: $content;
+    position: $position;
+    inset: $inset;
+    @content;
+  }
+}
+
+@mixin hoverfocus() {
+  &:hover,
+  &:focus-visible {
+    @content;
+  }
+}
+
+@mixin border($width, $color, $style: solid, $where: "") {
+  $hyphen: "";
+  @if $where != "" {
+    $hyphen: "-";
+  }
+  border#{$hyphen}#{$where}: $width $style $color;
+}
+
+@mixin max-width-content($add: 0) {
+  width: 100%;
+  max-width: px2rem($max-width-content) + 2 * $padding-inline-max + $add;
+  margin-inline: auto;
+}
+
+@mixin padding-inline($add: 0) {
+  padding-inline: $padding-inline-content;
+}

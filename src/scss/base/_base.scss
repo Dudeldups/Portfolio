@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+body {
+  background: $clr-bg-main;
+}
+
+.greenButton {
+  padding: 1rem 1.95rem;
+  background: $clr-primary-500;
+  border-radius: 0.375rem;
+  font-family: "Fraunces";
+  font-weight: 900;
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+  color: $clr-bg-main;
+}
