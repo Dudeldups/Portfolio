@@ -1,8 +1,14 @@
+import Navbar from "./components/Navbar/Navbar";
+import CTA from "./components/CTA/CTA";
+import Footer from "./components/Footer/Footer";
+
 function App() {
   return (
-    <>
-      <h1>Hello!</h1>
-    </>
+    <div className="main-wrapper">
+      <Navbar />
+      <CTA />
+      <Footer />
+    </div>
   );
 }
 

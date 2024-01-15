@@ -1,19 +1,25 @@
 @use "functions" as *;
+@use "sass:color";
 
 // colors
-$clr-bg-main: #fefcf7;
+$clr-primary-1: #4682b4;
+$clr-primary-2: #ffd658;
+$clr-primary-3: #ffb985;
+$clr-primary-4: #5654bf;
 
-$clr-primary-500: #0e8784;
-$clr-primary-300: lighten(#0e8784, 10);
+$clr-contrast-dark: #353630;
 
-$clr-secondary-500: #fdd6ba;
-$clr-secondary-300: #f4f1eb;
+$clr-contrast-light: #455460;
 
-$clr-grey-950: #2c343e;
-$clr-grey-900: #333d4b;
-$clr-grey-300: #83888f;
-$clr-grey-500: mix($clr-grey-900, $clr-grey-300);
-$clr-white: #fff;
+$clr-bg-primary: $clr-contrast-light;
+
+$clr-neutral-900: mix(white, black, $weight: 6);
+$clr-neutral-700: mix(white, black, $weight: 20);
+$clr-neutral-600: mix(white, black, $weight: 30);
+$clr-neutral-500: mix(white, black, $weight: 50);
+$clr-neutral-300: mix(white, black, $weight: 60);
+$clr-neutral-200: mix(white, black, $weight: 70);
+$clr-neutral-100: mix(white, black, $weight: 80);
 
 // breakpoints
 
@@ -21,16 +27,3 @@ $bp-tablet: 740px;
 $bp-desktop: 980px;
 
 // sizing
-
-$padding-inline-min: 1.5rem;
-$padding-inline-max: 2.5rem;
-$padding-inline-content: get-clamp(
-  $padding-inline-min,
-  $padding-inline-max,
-  20rem,
-  $bp-tablet
-);
-
-$padding-inner-desktop: 5.3rem;
-
-$max-width-content: 1280px;
