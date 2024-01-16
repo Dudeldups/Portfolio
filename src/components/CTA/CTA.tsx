@@ -1,4 +1,5 @@
 import ContactForm from "../ContactForm/ContactForm";
+import Projects from "../Projects/Projects";
 import "./CTA.scss";
 
 export default function CTA() {
@@ -21,63 +22,12 @@ export default function CTA() {
           extraordinary together!
         </p>
 
-        <a className="btn" href="#contact">
+        <a className="btn btn--contact" href="#contact">
           Contact me
         </a>
       </section>
 
-      <section id="projects" className="projects">
-        <h2 className="projects__title title--sub">Projects</h2>
-        <div className="tech-stack">
-          <p className="tech-stack__desc">Built with:</p>
-          <ul>
-            <li>
-              <img src="" alt="" />
-            </li>
-            <li>
-              <img src="" alt="" />
-            </li>
-            <li>
-              <img src="" alt="" />
-            </li>
-          </ul>
-        </div>
-
-        <ul className="project-list">
-          <li className="project-list__item">
-            <a href="">
-              <h3 className="project-list__title">Test</h3>
-              <p className="project-list__desc">
-                This is a description for the project
-              </p>
-            </a>
-          </li>
-          <li className="project-list__item">
-            <a href="">
-              <h3 className="project-list__title">Test</h3>
-              <p className="project-list__desc">
-                This is a description for the project
-              </p>
-            </a>
-          </li>
-          <li className="project-list__item">
-            <a href="">
-              <h3 className="project-list__title">Test</h3>
-              <p className="project-list__desc">
-                This is a description for the project
-              </p>
-            </a>
-          </li>
-          <li className="project-list__item">
-            <a href="">
-              <h3 className="project-list__title">Test</h3>
-              <p className="project-list__desc">
-                This is a description for the project
-              </p>
-            </a>
-          </li>
-        </ul>
-      </section>
+      <Projects />
 
       <section id="contact" className="contact">
         <h2 className="contact__title title--sub">Contact</h2>
@@ -85,6 +35,7 @@ export default function CTA() {
           Want to work together? <span>Or just say hi?</span> Then pop me a
           message!
         </p>
+
         <ContactForm />
       </section>
     </main>

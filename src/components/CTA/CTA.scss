@@ -3,3 +3,9 @@
 .title__main span {
   display: block;
 }
+
+.tech-stack {
+  & img {
+    width: 7rem;
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Art gallery website",
+    "techStack": ["React", "TypeScript", "Sass"],
+    "demo": "https://art-gallery-9000.netlify.app/",
+    "code": "https://github.com/Dudeldups/FM-art-gallery-website",
+    "image": "/assets/images/projects/art-gallery-website.png"
+  },
+  {
+    "name": "Planets fact site",
+    "techStack": ["React", "TypeScript", "Sass"],
+    "demo": "https://fm-planets-fact-site-9000.netlify.app/",
+    "code": "https://github.com/Dudeldups/FM-planets-fact-site",
+    "image": "/assets/images/projects/planets-fact-site.png"
+  },
+  {
+    "name": "Github user search app",
+    "techStack": ["React", "TypeScript", "Tailwind"],
+    "demo": "https://fm-github-user-search-9000.netlify.app/",
+    "code": "https://github.com/Dudeldups/FM-github-user-search-app",
+    "image": "/assets/images/projects/github-user-search-app.png"
+  },
+  {
+    "name": "BMI calculator",
+    "techStack": ["React", "TypeScript", "Less"],
+    "demo": "https://fm-bmi-calculator-9000.netlify.app/",
+    "code": "https://github.com/Dudeldups/FM-bmi-calculator",
+    "image": "/assets/images/projects/bmi-calculator.png"
+  }
+]

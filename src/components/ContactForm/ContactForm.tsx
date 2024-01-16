@@ -24,14 +24,14 @@ const ContactForm = () => {
   const onSubmit = async () => {
     try {
       if (formRef.current) {
-        await emailjs.sendForm(
+        const res = await emailjs.sendForm(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           formRef.current,
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
 
-        toast.success("Message was sent successfully!");
+        if (res.status === 200) toast.success("Message was sent successfully!");
       }
     } catch (error) {
       if (error instanceof Error) {
@@ -43,12 +43,16 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
-      <form ref={formRef} noValidate onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="name" className="contact__label">
+    <div className="form__wrapper">
+      <form
+        className="form"
+        ref={formRef}
+        noValidate
+        onSubmit={handleSubmit(onSubmit)}>
+        <label htmlFor="name" className="form__label">
           Name
           <input
-            className="contact__input"
+            className="form__input"
             type="text"
             id="name"
             {...register("name", {
@@ -57,17 +61,17 @@ const ContactForm = () => {
           />
         </label>
         <p
-          className="error-message"
+          className="form__error-message"
           aria-live="polite"
           aria-labelledby="name"
           role="alert">
           {errors.name ? errors.name.message : ""}
         </p>
 
-        <label htmlFor="email" className="contact__label">
+        <label htmlFor="email" className="form__label">
           Email
           <input
-            className="contact__input"
+            className="form__input"
             type="text"
             id="email"
             {...register("email", {
@@ -80,17 +84,17 @@ const ContactForm = () => {
           />
         </label>
         <p
-          className="error-message"
+          className="form__error-message"
           aria-live="polite"
           aria-labelledby="email"
           role="alert">
           {errors.email ? errors.email.message : ""}
         </p>
 
-        <label htmlFor="message" className="contact__label">
+        <label htmlFor="message" className="form__label">
           Message
           <textarea
-            className="contact__input"
+            className="form__input"
             id="message"
             cols={30}
             rows={8}
@@ -99,14 +103,16 @@ const ContactForm = () => {
             })}></textarea>
         </label>
         <p
-          className="error-message"
+          className="form__error-message"
           aria-live="polite"
           aria-labelledby="message"
           role="alert">
           {errors.message ? errors.message.message : ""}
         </p>
 
-        <button type="submit">Send</button>
+        <button className="btn btn--send" type="submit">
+          Send
+        </button>
       </form>
 
       <ToastContainer position="bottom-left" />

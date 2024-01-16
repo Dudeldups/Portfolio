@@ -1,0 +1,26 @@
+[
+  {
+    "name": "React",
+    "src": "/assets/images/logos/react-svgrepo-com.svg"
+  },
+  {
+    "name": "TypeScript",
+    "src": "/assets/images/logos/typescript-logo-svgrepo-com.svg"
+  },
+  {
+    "name": "Sass",
+    "src": "/assets/images/logos/sass-svgrepo-com.svg"
+  },
+  {
+    "name": "Less",
+    "src": "/assets/images/logos/less-svgrepo-com.svg"
+  },
+  {
+    "name": "Tailwind CSS",
+    "src": "/assets/images/logos/tailwind-svgrepo-com.svg"
+  },
+  {
+    "name": "Node.js",
+    "src": "/assets/images/logos/node-js-svgrepo-com.svg"
+  }
+]
