@@ -1,3 +1,4 @@
+import ContactForm from "../ContactForm/ContactForm";
 import "./CTA.scss";
 
 export default function CTA() {
@@ -27,7 +28,64 @@ export default function CTA() {
 
       <section id="projects" className="projects">
         <h2 className="projects__title title--sub">Projects</h2>
-        <p className="projects__desc">Have a look at my projects</p>
+        <div className="tech-stack">
+          <p className="tech-stack__desc">Built with:</p>
+          <ul>
+            <li>
+              <img src="" alt="" />
+            </li>
+            <li>
+              <img src="" alt="" />
+            </li>
+            <li>
+              <img src="" alt="" />
+            </li>
+          </ul>
+        </div>
+
+        <ul className="project-list">
+          <li className="project-list__item">
+            <a href="">
+              <h3 className="project-list__title">Test</h3>
+              <p className="project-list__desc">
+                This is a description for the project
+              </p>
+            </a>
+          </li>
+          <li className="project-list__item">
+            <a href="">
+              <h3 className="project-list__title">Test</h3>
+              <p className="project-list__desc">
+                This is a description for the project
+              </p>
+            </a>
+          </li>
+          <li className="project-list__item">
+            <a href="">
+              <h3 className="project-list__title">Test</h3>
+              <p className="project-list__desc">
+                This is a description for the project
+              </p>
+            </a>
+          </li>
+          <li className="project-list__item">
+            <a href="">
+              <h3 className="project-list__title">Test</h3>
+              <p className="project-list__desc">
+                This is a description for the project
+              </p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" className="contact">
+        <h2 className="contact__title title--sub">Contact</h2>
+        <p className="contact__desc">
+          Want to work together? <span>Or just say hi?</span> Then pop me a
+          message!
+        </p>
+        <ContactForm />
       </section>
     </main>
   );
