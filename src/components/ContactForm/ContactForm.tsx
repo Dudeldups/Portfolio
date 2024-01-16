@@ -1,11 +1,10 @@
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { emailRegexPattern } from "../../utils/regexPatterns";
-import { DevTool } from "@hookform/devtools";
-// TODO: Remove Devtools
-
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./ContactForm.scss";
-
-// interface ContactFormProps {}
 
 interface FormValues {
   name: string;
@@ -13,90 +12,106 @@ interface FormValues {
   message: string;
 }
 
-const ContactForm = () =>
-  // {}: ContactFormProps
-  {
-    const {
-      register,
-      handleSubmit,
-      formState: { errors },
-      control,
-    } = useForm<FormValues>({ mode: "onBlur" });
+const ContactForm = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
 
-    const onSubmit = (data: FormValues) => {
-      console.log("Form submitted", data);
-    };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({ mode: "onBlur" });
 
-    return (
-      <div>
-        <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="name" className="contact__label">
-            Name
-            <input
-              className="contact__input"
-              type="text"
-              id="name"
-              {...register("name", {
-                required: "Name is required.",
-              })}
-            />
-          </label>
-          <p
-            className="error-message"
-            aria-live="polite"
-            aria-labelledby="name"
-            role="alert">
-            {errors.name ? errors.name.message : ""}
-          </p>
+  const onSubmit = async () => {
+    try {
+      if (formRef.current) {
+        await emailjs.sendForm(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          formRef.current,
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
 
-          <label htmlFor="email" className="contact__label">
-            Email
-            <input
-              className="contact__input"
-              type="text"
-              id="email"
-              {...register("email", {
-                required: "Email is required.",
-                pattern: {
-                  value: emailRegexPattern,
-                  message: "Invalid email format.",
-                },
-              })}
-            />
-          </label>
-          <p
-            className="error-message"
-            aria-live="polite"
-            aria-labelledby="email"
-            role="alert">
-            {errors.email ? errors.email.message : ""}
-          </p>
-
-          <label htmlFor="message" className="contact__label">
-            Message
-            <textarea
-              className="contact__input"
-              id="message"
-              cols={30}
-              rows={8}
-              {...register("message", {
-                required: "You forgot the message :(",
-              })}></textarea>
-          </label>
-          <p
-            className="error-message"
-            aria-live="polite"
-            aria-labelledby="message"
-            role="alert">
-            {errors.message ? errors.message.message : ""}
-          </p>
-
-          <button type="submit">Send</button>
-        </form>
-
-        <DevTool control={control} />
-      </div>
-    );
+        toast.success("Message was sent successfully!");
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("Unknown error: " + error);
+      }
+    }
   };
+
+  return (
+    <div>
+      <form ref={formRef} noValidate onSubmit={handleSubmit(onSubmit)}>
+        <label htmlFor="name" className="contact__label">
+          Name
+          <input
+            className="contact__input"
+            type="text"
+            id="name"
+            {...register("name", {
+              required: "Name is required.",
+            })}
+          />
+        </label>
+        <p
+          className="error-message"
+          aria-live="polite"
+          aria-labelledby="name"
+          role="alert">
+          {errors.name ? errors.name.message : ""}
+        </p>
+
+        <label htmlFor="email" className="contact__label">
+          Email
+          <input
+            className="contact__input"
+            type="text"
+            id="email"
+            {...register("email", {
+              required: "Email is required.",
+              pattern: {
+                value: emailRegexPattern,
+                message: "Invalid email format.",
+              },
+            })}
+          />
+        </label>
+        <p
+          className="error-message"
+          aria-live="polite"
+          aria-labelledby="email"
+          role="alert">
+          {errors.email ? errors.email.message : ""}
+        </p>
+
+        <label htmlFor="message" className="contact__label">
+          Message
+          <textarea
+            className="contact__input"
+            id="message"
+            cols={30}
+            rows={8}
+            {...register("message", {
+              required: "You forgot the message :(",
+            })}></textarea>
+        </label>
+        <p
+          className="error-message"
+          aria-live="polite"
+          aria-labelledby="message"
+          role="alert">
+          {errors.message ? errors.message.message : ""}
+        </p>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <ToastContainer position="bottom-left" />
+    </div>
+  );
+};
 
 export default ContactForm;
