@@ -8,15 +8,27 @@
 
 body {
   font: 400 1rem / 1.625rem "Montserrat", sans-serif;
-  // color: $clr-neutral-200;
+  color: $clr-neutral-200;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
   font-weight: 900;
-  // color: $clr-neutral-100;
+  color: $clr-neutral-100;
 }
 
 :where(a) {
   color: inherit;
   text-decoration: none;
+}
+
+.nav {
+  font-size: 1.2rem;
+}
+
+.nav__link {
+  font-weight: 900;
+
+  &--main {
+    font-size: 1.25em;
+  }
 }

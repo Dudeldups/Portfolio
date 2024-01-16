@@ -14,13 +14,15 @@ export default function CTA() {
           <span>Repeat.</span>
         </h1>
 
-        <h2 className="hero__title title--sub">About me</h2>
-        <p className="hero__desc">
-          I'm Arne, a Frontend Web Developer based near Dortmund, Germany. My
-          passion lies in creating easy-to-use, appealing and accessible
-          websites that leave a lasting impression. Let's build something
-          extraordinary together!
-        </p>
+        <div className="hero__text-card">
+          <h2 className="hero__title title--sub">About me</h2>
+          <p className="hero__desc">
+            I'm Arne, a Frontend Web Developer based near Dortmund, Germany. My
+            passion lies in creating easy-to-use, appealing and accessible
+            websites that leave a lasting impression. Let's build something
+            extraordinary together!
+          </p>
+        </div>
 
         <a className="btn btn--contact" href="#contact">
           Contact me

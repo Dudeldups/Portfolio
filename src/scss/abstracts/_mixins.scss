@@ -19,7 +19,7 @@
   $content: "",
   $position: absolute,
   $inset: 0,
-  $parent: false
+  $parent: true
 ) {
   @if ($parent == true) {
     position: relative;
@@ -50,7 +50,7 @@
 
 @mixin max-width-content($add: 0) {
   width: 100%;
-  max-width: px2rem($max-width-content) + 2 * $padding-inline-max + $add;
+  max-width: px2rem($max-width-content) + $add;
   margin-inline: auto;
 }
 

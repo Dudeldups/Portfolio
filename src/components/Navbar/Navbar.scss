@@ -1,1 +1,37 @@
 @use "../../scss/abstracts/" as *;
+
+.nav {
+  @include max-width-content;
+
+  display: grid;
+  gap: 1rem;
+  padding-block: 1.25rem;
+
+  @include mq($bp-mobile-xl) {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__wrapper {
+    @include padding-inline;
+    background-color: $clr-contrast-light;
+  }
+
+  &__list {
+    display: flex;
+    gap: 2.5rem;
+    margin-left: auto;
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    @include pseudo($inset: 0 0 0 auto) {
+      height: 100%;
+      widht: 0.5rem;
+      background-color: $clr-neutral-300;
+    }
+  }
+}

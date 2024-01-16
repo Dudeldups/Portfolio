@@ -2,22 +2,30 @@ import "./Navbar.scss";
 
 export default function Navbar() {
   return (
-    <nav className="nav">
-      <div className="nav__wrapper">
-        <a href="/">Dudeldups</a>
+    <div className="nav__wrapper">
+      <nav className="nav">
+        <a className="nav__link nav__link--main" href="/">
+          Dudeldups
+        </a>
 
         <ul className="nav__list">
-          <li>
-            <a href="#about">About me</a>
+          <li className="nav__item">
+            <a className="nav__link" href="#about">
+              About me
+            </a>
           </li>
-          <li>
-            <a href="#projects">Projects</a>
+          <li className="nav__item">
+            <a className="nav__link" href="#projects">
+              Projects
+            </a>
           </li>
-          <li>
-            <a href="#contact">Contact</a>
+          <li className="nav__item">
+            <a className="nav__link" href="#contact">
+              Contact
+            </a>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }

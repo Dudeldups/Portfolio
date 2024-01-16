@@ -2,28 +2,36 @@
 @use "sass:color";
 
 // colors
-$clr-primary-1: #4682b4;
-$clr-primary-2: #ffd658;
-$clr-primary-3: #ffb985;
-$clr-primary-4: #5654bf;
+$clr-contrast-dark: #151515;
+$clr-contrast-light: #242424;
 
-$clr-contrast-dark: #353630;
-
-$clr-contrast-light: #455460;
-
-$clr-bg-primary: $clr-contrast-light;
+$clr-bg-primary: $clr-contrast-dark;
+$clr-bg-secondary: $clr-contrast-light;
 
 $clr-neutral-900: mix(white, black, $weight: 6%);
 $clr-neutral-700: mix(white, black, $weight: 20%);
 $clr-neutral-600: mix(white, black, $weight: 30%);
-$clr-neutral-500: mix(white, black, $weight: 50%);
-$clr-neutral-300: mix(white, black, $weight: 60%);
-$clr-neutral-200: mix(white, black, $weight: 70%);
-$clr-neutral-100: mix(white, black, $weight: 80%);
+$clr-neutral-500: mix(white, black, $weight: 55%);
+$clr-neutral-300: mix(white, black, $weight: 75%);
+$clr-neutral-200: mix(white, black, $weight: 85%);
+$clr-neutral-100: mix(white, black, $weight: 90%);
 
 // breakpoints
 
-$bp-tablet: 740px;
+$bp-mobile-xl: 500px;
+$bp-tablet: 600px;
 $bp-desktop: 980px;
 
 // sizing
+
+$max-width-content: 1200px;
+
+$padding-inline-min: 1.25rem;
+$padding-inline-max: 5rem;
+
+$padding-inline-content: get-clamp(
+  $padding-inline-min,
+  $padding-inline-max,
+  $bp-mobile-xl,
+  $bp-desktop
+);
