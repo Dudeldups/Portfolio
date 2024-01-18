@@ -1,12 +1,18 @@
+import Github from "../Icon/Github";
+import Linkedin from "../Icon/Linkedin";
 import "./Navbar.scss";
 
 export default function Navbar() {
   return (
-    <div className="nav__wrapper">
+    <div className="nav__outer-wrapper">
       <nav className="nav">
-        <a className="nav__link nav__link--main" href="/">
-          Dudeldups
-        </a>
+        <div className="nav__left-wrapper">
+          <a className="nav__link nav__link--main" href="/">
+            Dudeldups
+          </a>
+          <Github />
+          <Linkedin />
+        </div>
 
         <ul className="nav__list">
           <li className="nav__item">
