@@ -2,7 +2,10 @@ import "./Icon.scss";
 
 const Github = () => {
   return (
-    <a href="#" aria-label="github" className="icon-link">
+    <a
+      href="https://github.com/Dudeldups"
+      aria-label="github"
+      className="icon-link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"

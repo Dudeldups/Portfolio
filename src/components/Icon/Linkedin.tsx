@@ -1,8 +1,11 @@
 import "./Icon.scss";
 
-const Github = () => {
+const Linkedin = () => {
   return (
-    <a href="#" aria-label="linkedin" className="icon-link">
+    <a
+      href="https://www.linkedin.com/in/arne-jacob/"
+      aria-label="linkedin"
+      className="icon-link">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -18,4 +21,4 @@ const Github = () => {
   );
 };
 
-export default Github;
+export default Linkedin;
