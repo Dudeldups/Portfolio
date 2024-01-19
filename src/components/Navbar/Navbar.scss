@@ -1,5 +1,9 @@
 @use "../../scss/abstracts/" as *;
 
+.header {
+  @include padding-inline;
+}
+
 .nav {
   @include max-width-content;
 
@@ -7,23 +11,20 @@
   gap: 1rem;
   padding-block: 1.25rem;
 
-  &.scrolled {
-    // state for when the site is scrolled
-    background-color: $clr-contrast-light;
-  }
-
   @include mq($bp-mobile-xl) {
     display: flex;
     gap: 2rem;
   }
 
-  &__outer-wrapper {
-    @include padding-inline;
-  }
-
   &__left-wrapper {
     display: flex;
     gap: 0.75rem;
+  }
+
+  &__hamburger-btn {
+    width: 2.75rem;
+    aspect-ratio: 1/1;
+    // background-color: transparent;
   }
 
   &__list {

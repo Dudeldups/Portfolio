@@ -1,10 +1,15 @@
+import { useState } from "react";
 import Github from "../Icon/Github";
 import Linkedin from "../Icon/Linkedin";
 import "./Navbar.scss";
 
 export default function Navbar() {
+  const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+
+  const toggleHamburgerMenu = () => setIsHamburgerMenuOpen(prev => !prev);
+
   return (
-    <div className="nav__outer-wrapper">
+    <header className="header">
       <nav className="nav">
         <div className="nav__left-wrapper">
           <a className="nav__link nav__link--main" href="/">
@@ -14,7 +19,17 @@ export default function Navbar() {
           <Linkedin />
         </div>
 
-        <ul className="nav__list">
+        <button
+          className="nav__hamburger-btn"
+          aria-controls="nav__list"
+          aria-expanded={isHamburgerMenuOpen}
+          onClick={() => toggleHamburgerMenu}>
+          <span className="sr-only">
+            {isHamburgerMenuOpen ? "Show" : "Hide" + " navigation list"}
+          </span>
+        </button>
+
+        <ul id="nav__list" className="nav__list">
           <li className="nav__item">
             <a className="nav__link" href="#about">
               About me
@@ -32,6 +47,6 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }
