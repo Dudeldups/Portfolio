@@ -13,12 +13,14 @@ export default function Navbar() {
 
   return (
     <header className="header">
-      <div className="header__inner-wrapper">
+      <div className="header__outer-wrapper">
         <a className="header__link" href="/">
           Dudeldups
         </a>
-        <Github />
-        <Linkedin />
+        <div className="header__inner-wrapper">
+          <Github />
+          <Linkedin />
+        </div>
       </div>
 
       <button

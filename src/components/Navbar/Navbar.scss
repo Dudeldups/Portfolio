@@ -4,16 +4,26 @@
   @include max-width-content;
   @include padding-inline;
 
+  display: flex;
+  gap: 2rem;
+  padding-block: 1.25rem;
+
+  &__outer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 5rem;
+  }
+
   &__inner-wrapper {
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 }
 
 .hamburger-btn {
   display: none;
 
-  @include mq($until: $bp-mobile-xl) {
+  @include mq($until: $bp-tablet) {
     position: fixed;
     z-index: 100;
     inset: 1rem 1rem auto auto;
@@ -73,18 +83,18 @@
 
 .nav {
   display: flex;
-  grid-template-rows: 0fr;
-  gap: 1rem;
-  padding-block: 1.25rem;
+  align-items: center;
+  margin-left: auto;
 
-  @include mq($until: $bp-mobile-xl) {
+  @include mq($until: $bp-tablet) {
     position: fixed;
     inset: 0 0 0 20%;
+    display: grid;
+    align-items: flex-start;
+    gap: 2rem;
     padding-top: 5rem;
     background-color: rgba(black, 0.5);
     backdrop-filter: blur(0.8rem);
-    display: grid;
-    gap: 2rem;
     transform: translateX(150%);
     transition: transform 0.5s ease-out;
 
@@ -96,29 +106,28 @@
   }
 
   &__list {
+    list-style-type: none;
     display: flex;
-    margin-left: auto;
 
-    @include mq($until: $bp-mobile-xl) {
-      display: grid;
-      margin-inline: 3rem;
+    @include mq($until: $bp-tablet) {
+      flex-direction: column;
+      padding-inline: 15%;
     }
   }
 
   &__item {
-    list-style-type: none;
     padding-left: 1.25rem;
-    text-align: center;
 
-    @include mq($until: $bp-mobile-xl) {
-      padding: 1.25rem;
+    @include mq($until: $bp-tablet) {
+      width: 100%;
+      padding: 1.75rem;
     }
 
     &:not(:last-child) {
       padding-right: 1.25rem;
       border-right: 0.25em solid $clr-primary-2;
 
-      @include mq($until: $bp-mobile-xl) {
+      @include mq($until: $bp-tablet) {
         border-right: none;
         border-bottom: 0.15em solid $clr-primary-2;
       }
