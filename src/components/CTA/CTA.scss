@@ -1,5 +1,38 @@
 @use "../../scss/abstracts/" as *;
 
+.cta {
+}
+
+.hero {
+  background-color: $clr-neutral-700;
+
+  &__wrapper {
+    @include max-width-content;
+    @include padding-inline;
+
+    padding-block: 3.5rem;
+  }
+
+  &__title-card {
+    padding: get-clamp(1.25rem, 6.25rem, 320px, $bp-desktop)
+      get-clamp(1rem, 5rem, 320px, $bp-desktop);
+    max-width: 45rem;
+    margin-inline: auto;
+    background-color: $clr-contrast-dark;
+    border-radius: 15px;
+    box-shadow: 0 0 30px -12px rgba(white, 0.75);
+    overflow: hidden;
+  }
+
+  &__text-card {
+    margin-top: 5rem;
+  }
+
+  &__desc {
+    margin-top: 1.5rem;
+  }
+}
+
 .tech-stack {
   & img {
     width: 7rem;
