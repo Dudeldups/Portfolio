@@ -5,18 +5,23 @@
   @include padding-inline;
 
   display: flex;
-  gap: 2rem;
   padding-block: 1.25rem;
 
   &__outer-wrapper {
-    display: flex;
+    flex: 1;
+    display: grid;
+    gap: 1rem;
     flex-wrap: wrap;
-    gap: 2rem 5rem;
   }
 
   &__inner-wrapper {
     display: flex;
     gap: 1rem;
+    margin-right: auto;
+  }
+
+  & .icon {
+    display: block;
   }
 }
 
@@ -84,7 +89,6 @@
 .nav {
   display: flex;
   align-items: center;
-  margin-left: auto;
 
   @include mq($until: $bp-tablet) {
     position: fixed;
@@ -93,7 +97,7 @@
     align-items: flex-start;
     gap: 2rem;
     padding-top: 5rem;
-    background-color: rgba(black, 0.5);
+    background-color: rgba(black, 0.75);
     backdrop-filter: blur(0.8rem);
     transform: translateX(150%);
     transition: transform 0.5s ease-out;

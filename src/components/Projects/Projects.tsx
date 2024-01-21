@@ -17,7 +17,11 @@ const Projects = () => {
 
   const allProjects = projectData.map(project => (
     <li key={project.name} className="project-list__item">
-      <img src={project.image} alt="A preview screenshot of the website." />
+      <img
+        src={project.image}
+        alt={`A preview screenshot of the ${project.name}.`}
+        loading="lazy"
+      />
 
       <h3 className="project-list__title">{project.name}</h3>
 

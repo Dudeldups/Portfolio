@@ -48,8 +48,8 @@
   border#{$hyphen}#{$where}: $width $style $color;
 }
 
-@mixin test-border {
-  border: 2px solid red;
+@mixin test-border($c: red) {
+  outline: 2px solid $c;
 }
 
 @mixin max-width-content($add: 0) {
