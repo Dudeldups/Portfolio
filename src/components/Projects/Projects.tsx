@@ -9,7 +9,7 @@ const Projects = () => {
         className="tech-stack__image"
         src={tech.src}
         alt=""
-        role="presentation"
+        aria-hidden="true"
       />
       <p className="tech-stack__name">{tech.name}</p>
     </li>
@@ -22,11 +22,31 @@ const Projects = () => {
       <h3 className="project-list__title">{project.name}</h3>
 
       <div className="project-list__btn-wrapper">
-        <a className="btn btn--project" href={project.demo}>
+        <a
+          className="btn btn--project"
+          href={project.demo}
+          target="_blank"
+          rel="noreferrer">
           Demo
+          <img
+            src="/assets/images/icons/newtab-svgrepo-com.svg"
+            alt=""
+            aria-hidden="true"
+            className="icon"
+          />
         </a>
-        <a className="btn btn--project" href={project.code}>
+        <a
+          className="btn btn--project"
+          href={project.code}
+          target="_blank"
+          rel="noreferrer">
           Code
+          <img
+            src="/assets/images/icons/newtab-svgrepo-com.svg"
+            alt=""
+            aria-hidden="true"
+            className="icon"
+          />
         </a>
       </div>
     </li>

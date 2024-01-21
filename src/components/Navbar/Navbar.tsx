@@ -29,7 +29,7 @@ export default function Navbar() {
         aria-expanded={isHamburgerMenuOpen}
         onClick={() => setIsHamburgerMenuOpen(prev => !prev)}>
         <span className="sr-only">
-          {isHamburgerMenuOpen ? "Show" : "Hide" + " navigation list"}
+          {isHamburgerMenuOpen ? "Show" : "Hide"} navigation list
         </span>
         <span className="hamburger-btn__bar"></span>
       </button>

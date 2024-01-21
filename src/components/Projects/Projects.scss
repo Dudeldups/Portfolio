@@ -1,1 +1,28 @@
 @use "../../scss/abstracts" as *;
+
+.project-list {
+  background-color: grey;
+
+  &__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    & .btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1rem;
+      background-color: $clr-primary-3;
+      color: $clr-contrast-dark;
+      border-radius: 100vw;
+
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    & .icon {
+      width: 1rem;
+    }
+  }
+}
