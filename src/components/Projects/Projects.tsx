@@ -7,7 +7,9 @@ const Projects = () => {
     <li key={tech.name} className="tech-stack__item">
       <img
         className="tech-stack__image"
-        src={tech.src}
+        src={
+          new URL(`../../assets/images/logos/${tech.src}`, import.meta.url).href
+        }
         alt=""
         aria-hidden="true"
       />
