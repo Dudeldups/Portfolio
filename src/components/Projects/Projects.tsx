@@ -18,7 +18,12 @@ const Projects = () => {
   const allProjects = projectData.map(project => (
     <li key={project.name} className="project-list__item">
       <img
-        src={new URL(`.${project.image}`, import.meta.url).href}
+        src={
+          new URL(
+            `../../assets/images/projects/${project.image}`,
+            import.meta.url
+          ).href
+        }
         alt={`A preview screenshot of the ${project.name}.`}
         loading="lazy"
       />
