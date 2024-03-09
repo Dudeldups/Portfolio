@@ -1,11 +1,13 @@
-import Navbar from "./components/Navbar/Navbar";
+import Header from "./components/Header/Header";
 import CTA from "./components/CTA/CTA";
 import Footer from "./components/Footer/Footer";
+import ToTopButton from "./components/ToTopButton/ToTopButton";
 
 function App() {
   return (
     <div className="main-wrapper">
-      <Navbar />
+      <ToTopButton isScrolled={true} />
+      <Header />
       <CTA />
       <Footer />
     </div>

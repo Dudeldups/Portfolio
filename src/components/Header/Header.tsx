@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Github from "../Icon/Github";
 import Linkedin from "../Icon/Linkedin";
-import "./Navbar.scss";
+import "./Header.scss";
 
 export default function Navbar() {
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
@@ -26,7 +26,6 @@ export default function Navbar() {
       <button
         className="hamburger-btn"
         aria-controls="nav__list"
-        aria-expanded={isHamburgerMenuOpen}
         onClick={() => setIsHamburgerMenuOpen(prev => !prev)}>
         <span className="sr-only">
           {isHamburgerMenuOpen ? "Show" : "Hide"} navigation list
@@ -34,7 +33,7 @@ export default function Navbar() {
         <span className="hamburger-btn__bar"></span>
       </button>
 
-      <nav className="nav">
+      <nav className="nav" aria-expanded={isHamburgerMenuOpen}>
         <ul id="nav__list" className="nav__list">
           <li className="nav__item">
             <a className="nav__link" href="#about">
